@@ -14,12 +14,12 @@
 	<h:form>
         <h:panelGrid columns="2">
             <h:outputText value="Ingrese el usuario" /> 
-            <p:inputText  required="true" value="#{iniciarSesion.correo}" maxlength="20" requiredMessage="Ingrese el usuario" />
+            <p:inputText  required="true" value="#{beanIniciarSesion.correo}" maxlength="20" requiredMessage="Ingrese el usuario" />
              <h:outputText value="Ingrese contraseña" /> 
-             <h:inputSecret value="#{iniciarSesion.clave}">
+             <h:inputSecret value="#{beanIniciarSesion.clave}">
              	<f:validateLength minimun="4"></f:validateLength>
              </h:inputSecret>
-                <p:commandButton value="Acceder" action="#{iniciarSesion.acceder()}" icon="ui-icon-key"  />
+                <p:commandButton value="Acceder" action="#{beanIniciarSesion.verificar()}" icon="ui-icon-key"  />
         </h:panelGrid>   
 </h:form>
 </p:panel>
