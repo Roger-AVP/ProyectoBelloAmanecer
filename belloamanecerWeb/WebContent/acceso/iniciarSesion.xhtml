@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+<title>Iniciar Sesión</title>
+</h:head> 
+<body>
+<p:growl><p:autoUpdate/></p:growl> 
+<p:panel header="Login" style="width:400">
+	<h:form>
+        <h:panelGrid columns="2">
+            <h:outputText value="Ingrese el usuario" /> 
+            <p:inputText  required="true" value="#{iniciarSesion.correo}" maxlength="20" requiredMessage="Ingrese el usuario" />
+             <h:outputText value="Ingrese contraseña" /> 
+             <h:inputSecret value="#{iniciarSesion.clave}">
+             	<f:validateLength minimun="4"></f:validateLength>
+             </h:inputSecret>
+                <p:commandButton value="Acceder" action="#{iniciarSesion.acceder()}" icon="ui-icon-key"  />
+        </h:panelGrid>   
+</h:form>
+</p:panel>
+
+</body> 
+</html>
