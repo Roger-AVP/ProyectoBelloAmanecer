@@ -1,11 +1,102 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
-<h1>Reservas</h1>
-</body> 
+<h:head>
+	<f:facet name="first">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no, use-scalable=no" />
+		<title>Manejo de datos reservas</title>
+	</f:facet>
+</h:head>
+<body>
+	<h1 align="center">Reservas</h1>
+	<h:form id="form1">
+		<p:panel header="Datos de facturas">
+			<p:dataTable value="#{beanFacReserva.listaFacReservas}"
+				var="reservas">
+				<p:column headerText="Id reserva">
+					<h:outputText value="#{reservas.idreserva}" />
+				</p:column>
+				<p:column headerText="Id usuario">
+					<h:outputText value="#{reservas.invUsuario}" />
+				</p:column>
+				<p:column headerText="Fecha">
+					<h:outputText value="#{reservas.fechareserva}" />
+				</p:column>
+				<p:column headerText="Hora">
+					<h:outputText value="#{reservas.horareserva}" />
+				</p:column>
+				<p:column headerText="Estado pago">
+					<h:outputText value="#{reservas.estadopago}" />
+				</p:column>
+				<p:column headerText="Descuento">
+					<h:outputText value="#{reservas.facParametro}" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+	<h:form id="form2">
+		<p:panel header="Datos de detalles">
+			<p:dataTable value="#{beanFacReserva.listaFacDetalles}"
+				var="detalles">
+				<p:column headerText="Id detalle">
+					<h:outputText value="#{detalles.iddetalle}" />
+				</p:column>
+				<p:column headerText="Id reserva">
+					<h:outputText value="#{detalles.facReserva}" />
+				</p:column>
+				<p:column headerText="id habitacion">
+					<h:outputText value="#{detalles.invHabitacione}" />
+				</p:column>
+				<p:column headerText="Dias de estadia">
+					<h:outputText value="#{detalles.diasestadia}" />
+				</p:column>
+				<p:column headerText="Fecha uso">
+					<h:outputText value="#{detalles.fechauso}" />
+				</p:column>
+				<p:column headerText="Estado reserva">
+					<h:outputText value="#{detalles.estadoreserva}" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+	<h:form id="form3">
+		<p:panel header="Datos de usuarios">
+			<p:dataTable value="#{beanFacReserva.listaInvUsuarios}"
+				var="usuarios">
+				<p:column headerText="Id usuarios">
+					<h:outputText value="#{usuarios.idusuario}" />
+				</p:column>
+				<p:column headerText="Nombre">
+					<h:outputText value="#{usuarios.nombresusuario}" />
+				</p:column>
+				<p:column headerText="Apellido">
+					<h:outputText value="#{usuarios.apellidosusuario}" />
+				</p:column>
+				<p:column headerText="Correo">
+					<h:outputText value="#{usuarios.correo}" />
+				</p:column>
+				<p:column headerText="Direccion">
+					<h:outputText value="#{usuarios.direccion}" />
+				</p:column>
+				<p:column headerText="Telefono">
+					<h:outputText value="#{usuarios.telefono}" />
+				</p:column>
+				<p:column headerText="Fecha creacion">
+					<h:outputText value="#{usuarios.fechacreacion}" />
+				</p:column>
+				<p:column headerText="Fechas actualizacion">
+					<h:outputText value="#{usuarios.fechaactualizacion}" />
+				</p:column>
+				<p:column headerText="Estado">
+					<h:outputText value="#{usuarios.estado}" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+</body>
 </html>

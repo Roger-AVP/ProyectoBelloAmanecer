@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="hoteleriaDS" transaction-type="JTA">
+		<jta-data-source>java:/hoteleriaDS</jta-data-source>
+		<class>belloamanecer.acceso.entities.Bitacora</class>
+		<class>belloamanecer.acceso.entities.FacDetalle</class>
+		<class>belloamanecer.acceso.entities.FacParametro</class>
+		<class>belloamanecer.acceso.entities.FacReserva</class>
+		<class>belloamanecer.acceso.entities.InvHabitacione</class>
+		<class>belloamanecer.acceso.entities.InvObjeto</class>
+		<class>belloamanecer.acceso.entities.InvObjetoshabitacione</class>
+		<class>belloamanecer.acceso.entities.InvRole</class>
+		<class>belloamanecer.acceso.entities.InvRolesusuario</class>
+		<class>belloamanecer.acceso.entities.InvTiposhabitacione</class>
+		<class>belloamanecer.acceso.entities.InvUsuario</class>
+	</persistence-unit>
+</persistence>
