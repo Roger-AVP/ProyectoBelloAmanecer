@@ -4,6 +4,7 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 import belloamanecer.acceso.entities.Usuario;
+import belloamanecer.acceso.entities.RolesUsuario;
 
 import java.util.ArrayList; 
 import java.util.List;
@@ -37,5 +38,22 @@ public class ManagerIniciarSesion {
 			 System.out.println(us.getNombres()); 
 		 }
 		 return listaUsuarios; 
+	}
+    
+    public  List<RolesUsuario>  listarRolesUsuarios(){    
+		 System.out.println("acaaaa 2"); 
+		 List<RolesUsuario> listaRolesUsuarios=new ArrayList<RolesUsuario>();        
+		 RolesUsuario u=new RolesUsuario("Administrador","ravacap@utn.edu.ec");        
+		 listaRolesUsuarios.add(u);        
+		 u=new RolesUsuario("Gerente","ravacap@utn.edu.ec");        
+		 listaRolesUsuarios.add(u);        
+		 u=new RolesUsuario("Recepcionista","gissela@utn.edu.ec");        
+		 listaRolesUsuarios.add(u);     
+		 u=new RolesUsuario("Administrador","gissela@utn.edu.ec");        
+		 listaRolesUsuarios.add(u); 
+		 u=new RolesUsuario("Cliente","yuliza@utn.edu.ec");        
+		 listaRolesUsuarios.add(u);   
+		
+		 return listaRolesUsuarios; 
 	}
 }

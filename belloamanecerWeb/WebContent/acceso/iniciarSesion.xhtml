@@ -6,11 +6,27 @@
       xmlns:p="http://primefaces.org/ui"> 
 
 <h:head>
-<title>Iniciar Sesión</title>
+<title>Bello Amanecer</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </h:head> 
 <body>
+
+   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">HOTEL BELLO AMANECER</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav> 
+
 <p:growl><p:autoUpdate/></p:growl> 
-<p:panel header="Login" style="width:400">
+<p:panel header="Iniciar Sesión" style="width:400">
 	<h:form>
         <h:panelGrid columns="2">
             <h:outputText value="Ingrese el usuario" /> 
@@ -19,7 +35,7 @@
              <h:inputSecret value="#{beanIniciarSesion.clave}">
              	<f:validateLength minimun="4"></f:validateLength>
              </h:inputSecret>
-                <p:commandButton value="Acceder" action="#{beanIniciarSesion.verificar()}" icon="ui-icon-key"  />
+                <p:commandButton value="Acceder" action="#{beanIniciarSesion.verificar()}"  icon="pi pi-key"  />
         </h:panelGrid>   
 </h:form>
 </p:panel>

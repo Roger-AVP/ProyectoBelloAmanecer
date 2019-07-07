@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">  
+
+<h:head><title>Bello Amanecer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</h:head> 
+<body> 
+<h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+       <p:menuitem value="Reservas Hoteleras" />
+ 
+        <f:facet name="options">
+            <p:outputLabel style="margin:1px 10px 1px 1px;" value="#{beanIniciarSesion.correo}"></p:outputLabel>
+            <p:commandButton type="button" action="#{beanIniciarSesion.cerrarSesion()}" value="Cerrar Sesión" icon="pi pi-home" />
+        </f:facet>
+    </p:menubar>
+</h:form>
+
+
+
+   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">HOTEL BELLO AMANECER</a>
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav> 
+
+<div class="jumbotron" style="display:block; text-align:center">
+  <h1>Acceder como:</h1>
+  <h:form>
+    <p:multiSelectListbox value="#{beanIniciarSesion.rolSeleccionado}" style="display:block;
+    position:relative;left:45%; text-align:center">
+        <f:selectItems value="#{beanIniciarSesion.listaRolesUsuario}" />
+    </p:multiSelectListbox>
+ 
+    <p:commandButton value="Seleccionar" icon="pi pi-check" action="#{beanIniciarSesion.ir()}" style="display:block;margin:10px 0; 
+     position:relative;left:46%; text-align:center"/>
+</h:form>
+</div>
+
+
+
+
+</body> 
+</html>
